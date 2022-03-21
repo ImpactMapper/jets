@@ -30,7 +30,7 @@ module Jets
         Zeitwerk::Loader.new.tap do |loader|
           loader.tag = "jets.main"
           loader.inflector.inflect(
-            'im' => 'IM
+            'im' => 'IM'
           )
           # loader.inflector = Inflector.new # TODO: allow custom app inflector
           # The main loader is configured later on in Jets::Application#setup_autoload_paths
