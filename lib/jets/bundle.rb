@@ -49,7 +49,7 @@ module Jets
 
     def handle_error(e)
       puts e.message
-      puts <<~EOL.color(:yellow)
+      puts <<~EOL.colour(:yellow)
         WARNING: Unable to require "bundler/setup"
         There may be something funny with your ruby and bundler setup.
         You can try upgrading bundler and rubygems:

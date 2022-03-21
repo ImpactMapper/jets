@@ -21,8 +21,8 @@ module Jets::Commands
         {}
       end
     rescue Psych::SyntaxError => e
-      puts "WARN: There was an error reading #{pretty(path)}".color(:yellow)
-      puts "WARN: #{e.class} #{e.message}".color(:yellow)
+      puts "WARN: There was an error reading #{pretty(path)}".colour(:yellow)
+      puts "WARN: #{e.class} #{e.message}".colour(:yellow)
       {}
     end
 

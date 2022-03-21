@@ -6,7 +6,7 @@ class Jets::Commands::Runner
       if File.exist?(full_path)
         code = IO.read(full_path)
       else
-        puts "ERROR: file not found at #{full_path}".color(:red)
+        puts "ERROR: file not found at #{full_path}".colour(:red)
         exit 1
       end
     end

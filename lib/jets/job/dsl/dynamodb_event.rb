@@ -36,7 +36,7 @@ module Jets::Job::Dsl
         resp = dynamodb.describe_table(table_name: table_name)
       rescue Aws::DynamoDB::Errors::ResourceNotFoundException => e
         puts e.message
-        puts "ERROR: Was not able to find the DynamoDB table: #{table_name}.".color(:red)
+        puts "ERROR: Was not able to find the DynamoDB table: #{table_name}.".colour(:red)
         code_line = caller.grep(%r{/app/jobs}).first
         puts "Please check: #{code_line}"
         puts "Exiting"

@@ -21,16 +21,16 @@ class Jets::Turbo
     def afterburners_message
       command = ARGV.first
       if command == "deploy"
-        puts "=> Rails app detected: Enabling Jets Afterburner to deploy to AWS Lambda.".color(:green)
+        puts "=> Rails app detected: Enabling Jets Afterburner to deploy to AWS Lambda.".colour(:green)
       else
-        puts "=> Rails app detected: Enabling Jets Afterburner.".color(:green)
+        puts "=> Rails app detected: Enabling Jets Afterburner.".colour(:green)
       end
     end
 
     def check_old_dot_jets_app_folder!
       return unless File.exist?(".jets/app")
 
-      puts <<~EOL.color(:red)
+      puts <<~EOL.colour(:red)
         ERROR: .jets/app folder exists. Starting in version jets v1.9.23 this folder should be renamed to .jets/project.
         Please run:
 

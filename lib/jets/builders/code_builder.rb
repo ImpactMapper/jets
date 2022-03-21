@@ -197,7 +197,7 @@ module Jets::Builders
     # This is because the node and yarn has likely been set up correctly there.
     def compile_assets
       if ENV['JETS_SKIP_ASSETS']
-        puts "Skip compiling assets".color(:yellow) # useful for debugging
+        puts "Skip compiling assets".colour(:yellow) # useful for debugging
         return
       end
 
@@ -229,7 +229,7 @@ module Jets::Builders
       return unless Jets.rack? && rails? && !rails_api?
 
       if ENV['JETS_SKIP_ASSETS']
-        puts "Skip compiling rack assets".color(:yellow) # useful for debugging
+        puts "Skip compiling rack assets".colour(:yellow) # useful for debugging
         return
       end
 
@@ -293,7 +293,7 @@ module Jets::Builders
       FileUtils.rm_rf("#{stage_area}/code") # remove current code folder
       move_node_modules(Jets.root, Jets.build_root)
       begin
-        # puts "cp -r #{@full_project_path} #{"#{stage_area}/code"}".color(:yellow) # uncomment to debug
+        # puts "cp -r #{@full_project_path} #{"#{stage_area}/code"}".colour(:yellow) # uncomment to debug
         Jets::Util.cp_r(@full_project_path, "#{stage_area}/code")
       ensure
         move_node_modules(Jets.build_root, Jets.root) # move node_modules directory back
@@ -383,7 +383,7 @@ module Jets::Builders
     def check_ruby_version
       return unless ENV['JETS_RUBY_CHECK'] == '0' || Jets.config.ruby.check == false
       return if ruby_version_supported?
-      puts <<~EOL.color(:red)
+      puts <<~EOL.colour(:red)
       You are using Ruby version #{RUBY_VERSION} which is not supported by Jets.
       Please use one of the Jets supported ruby versions: #{SUPPORTED_RUBY_VERSIONS.join(' ')}
       If you would like to skip this check you can set: JETS_RUBY_CHECK=0

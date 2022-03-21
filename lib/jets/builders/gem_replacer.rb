@@ -38,7 +38,7 @@ module Jets::Builders
     end
 
     def sh(command)
-      puts "=> #{command}".color(:green)
+      puts "=> #{command}".colour(:green)
       success = system(command)
       abort("Command Failed: #{command}") unless success
       success

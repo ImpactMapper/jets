@@ -20,13 +20,13 @@ class Jets::Commands::Delete
     stack_in_progress?(parent_stack_name)
 
     cfn.delete_stack(stack_name: parent_stack_name)
-    puts "Deleting #{Jets.config.project_namespace.color(:green)}..."
+    puts "Deleting #{Jets.config.project_namespace.colour(:green)}..."
 
     wait_for_stack if @options[:wait]
 
     delete_logs
 
-    puts "Project #{Jets.config.project_namespace.color(:green)} deleted!"
+    puts "Project #{Jets.config.project_namespace.colour(:green)} deleted!"
   end
 
   def wait_for_stack
@@ -34,7 +34,7 @@ class Jets::Commands::Delete
     start_time = Time.now
     status.wait
     took = Time.now - start_time
-    puts "Time took for deletion: #{status.pretty_time(took).color(:green)}."
+    puts "Time took for deletion: #{status.pretty_time(took).colour(:green)}."
   end
 
   def delete_logs
@@ -97,12 +97,12 @@ class Jets::Commands::Delete
     if @options[:yes]
       sure = 'y'
     else
-      puts "Are you sure you want to want to delete the #{Jets.config.project_namespace.color(:green)} project? (y/N)"
+      puts "Are you sure you want to want to delete the #{Jets.config.project_namespace.colour(:green)} project? (y/N)"
       sure = $stdin.gets
     end
 
     unless sure =~ /^y/
-      puts "Phew! Jets #{Jets.config.project_namespace.color(:green)} project was not deleted."
+      puts "Phew! Jets #{Jets.config.project_namespace.colour(:green)} project was not deleted."
       exit 0
     end
   end
@@ -121,7 +121,7 @@ class Jets::Commands::Delete
 
       if status =~ /_IN_PROGRESS$/
         puts "The '#{@parent_stack_name}' stack status is #{status}. " \
-             "It is not in an updateable status. Please wait until the stack is ready and try again.".color(:red)
+             "It is not in an updateable status. Please wait until the stack is ready and try again.".colour(:red)
         exit 0
       elsif resp.stacks[0].outputs.empty?
         # This Happens when the miminal stack fails at the very beginning.

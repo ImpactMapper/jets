@@ -45,7 +45,7 @@ module Jets
 
 
         command = "cd #{rack_project} && bin/rackup#{args}" # leads to the same wrapper rack scripts
-        puts "=> #{command}".color(:green)
+        puts "=> #{command}".colour(:green)
         system(command)
       end
     end

@@ -43,7 +43,7 @@ class Jets::Resource::ApiGateway::RestApi
         $stdin.gets
       end
     rescue Timeout::Error => e
-      puts "#{e.class}: #{e.message}".color(:red)
+      puts "#{e.class}: #{e.message}".colour(:red)
       puts "Deployment timeout after #{TIMEOUT_PERIOD}s. Waited too long answer. Exiting."
       exit 1
     end

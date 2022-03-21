@@ -61,7 +61,7 @@ module Jets
 
     def api_mode?
       if Jets.config.key?(:api_mode) || Jets.config.key?(:api_generator)
-        puts <<~EOL.color(:yellow)
+        puts <<~EOL.colour(:yellow)
           DEPRECATED: Jets.config.api_generator
           Instead, please update your config/application.rb to use:
             Jets.config.mode = 'api'
@@ -169,7 +169,7 @@ module Jets
       def check_route_connected_functions
         return true if all_routes_valid?
 
-        puts "Please double check the routes below map to valid controllers:".color(:red)
+        puts "Please double check the routes below map to valid controllers:".colour(:red)
         invalid_routes.each do |route|
           puts "  /#{route.path} => #{route.controller_name}##{route.action_name}"
         end

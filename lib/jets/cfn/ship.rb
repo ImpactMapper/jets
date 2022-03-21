@@ -22,7 +22,7 @@ module Jets::Cfn
         confirm = prompt_for_iam(capabilities)
         if confirm =~ /^y/
           @options.merge!(capabilities: [capabilities])
-          puts "Re-running: #{command_with_iam(capabilities).color(:green)}"
+          puts "Re-running: #{command_with_iam(capabilities).colour(:green)}"
           retry
         else
           puts "Exited"
@@ -65,7 +65,7 @@ module Jets::Cfn
       begin
         cfn.update_stack(stack_options)
       rescue Aws::CloudFormation::Errors::ValidationError => e
-        puts "ERROR: #{e.message}".color(:red)
+        puts "ERROR: #{e.message}".colour(:red)
         true # error
       end
     end

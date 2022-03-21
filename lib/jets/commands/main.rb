@@ -45,7 +45,7 @@ module Jets::Commands
     def server
       o = options
       command = "bundle exec rackup --port #{o[:port]} --host #{o[:host]}"
-      puts "=> #{command}".color(:green)
+      puts "=> #{command}".colour(:green)
       puts Jets::Booter.message
       Jets::Booter.check_config_ru!
       Jets::RackServer.start(options) unless ENV['JETS_RACK'] == '0' # rack server runs in background by default

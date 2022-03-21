@@ -58,7 +58,7 @@ module Jets::Job::Dsl
 
     # Deprecated methods, will be removed in the future
     def events_rule(props)
-      puts "DEPRECATED: events_rule. Instead use rule_event. The events_rule will be removed in the future.  Pausing for 5 seconds".color(:yellow)
+      puts "DEPRECATED: events_rule. Instead use rule_event. The events_rule will be removed in the future.  Pausing for 5 seconds".colour(:yellow)
       puts caller[0]
       sleep 5
       rule_event(props)
@@ -66,7 +66,7 @@ module Jets::Job::Dsl
     # Deprecated methods, will be removed in the future
 
     def event_pattern(props)
-      puts "DEPRECATED: events_rule. Instead use rule_event. The events_rule will be removed in the future.  Pausing for 5 seconds".color(:yellow)
+      puts "DEPRECATED: events_rule. Instead use rule_event. The events_rule will be removed in the future.  Pausing for 5 seconds".colour(:yellow)
       puts caller[0]
       sleep 5
       rule_event(props)

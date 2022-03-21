@@ -9,7 +9,7 @@ module Jets::Commands
     end
 
     def run
-      deployment_env = Jets.config.project_namespace.color(:green)
+      deployment_env = Jets.config.project_namespace.colour(:green)
       puts "Deploying to Lambda #{deployment_env} environment..."
       return if @options[:noop]
 
@@ -52,7 +52,7 @@ module Jets::Commands
 
     def check_dev_mode
       if File.exist?("#{Jets.root}/dev.mode")
-        puts "The dev.mode file exists. Please removed it and run bundle update before you deploy.".color(:red)
+        puts "The dev.mode file exists. Please removed it and run bundle update before you deploy.".colour(:red)
         exit 1
       end
     end
@@ -64,7 +64,7 @@ module Jets::Commands
     def validate_routes!
       valid = Jets::Router.validate_routes!
       unless valid
-        puts "Deploy fail: The jets application contain invalid routes.".color(:red)
+        puts "Deploy fail: The jets application contain invalid routes.".colour(:red)
         exit 1
       end
     end
@@ -127,8 +127,8 @@ module Jets::Commands
          status =~ /_IN_PROGRESS$/
         region = `aws configure get region`.strip rescue "us-east-1"
         url = "https://console.aws.amazon.com/cloudformation/home?region=#{region}#/stacks"
-        puts "The parent stack of the #{Jets.config.project_name.color(:green)} project is not in an updateable state."
-        puts "Stack name #{stack_name.color(:yellow)} status #{stack["stack_status"].color(:yellow)}"
+        puts "The parent stack of the #{Jets.config.project_name.colour(:green)} project is not in an updateable state."
+        puts "Stack name #{stack_name.colour(:yellow)} status #{stack["stack_status"].colour(:yellow)}"
         puts "Here's the CloudFormation url to check for more details #{url}"
         exit 1
       end

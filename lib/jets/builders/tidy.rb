@@ -90,7 +90,7 @@ module Jets::Builders
       exists = File.exist?("#{path}/.gitkeep") || File.exist?("#{path}/.keep")
       return if exists
 
-      # say "  rm -rf #{path}".color(:yellow) # uncomment to debug
+      # say "  rm -rf #{path}".colour(:yellow) # uncomment to debug
       system("rm -rf #{path}") unless @noop
     end
 

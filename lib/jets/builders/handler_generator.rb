@@ -75,7 +75,7 @@ module Jets::Builders
         end
 
         unless missing.empty?
-          puts "ERROR: Missing source files. Please make sure these source files exist or remove their declarations".color(:red)
+          puts "ERROR: Missing source files. Please make sure these source files exist or remove their declarations".colour(:red)
           puts missing
           exit 1
         end
@@ -125,7 +125,7 @@ module Jets::Builders
       unless source_path
         attributes = fun.template.values.first
         function_name = attributes['Properties']['FunctionName']
-        puts "WARN: missing source file for: '#{function_name}' function".color(:yellow)
+        puts "WARN: missing source file for: '#{function_name}' function".colour(:yellow)
         return
       end
 

@@ -41,7 +41,7 @@ class Jets::Commands::Import
       begin
         directory ".", rack_folder, exclude_pattern: %r{.git}
       rescue Thor::Error => e
-        puts e.message.color(:red)
+        puts e.message.colour(:red)
         exit 1
       end
     end
